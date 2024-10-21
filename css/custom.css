@@ -1,0 +1,226 @@
+*{
+    box-sizing: border-box;
+}
+.out1{
+    background-color: #0073C8;
+    margin-top: 1.5rem !important;
+    width: 83%;
+    text-align: left;
+    font-weight: 500;
+    padding-left: 5px
+    vertical-align: middle;
+    height: 40px;
+    margin-bottom: -1rem !important;
+    background-position: center;
+    margin: 8%;
+    
+}
+.ff1{
+    width: 95%;
+    height: 35px;
+    padding-left: 15px;
+
+}
+.off1{
+    background-color: orangered;
+    color: aliceblue;
+    margin-top: 1.2rem !important;
+    width: 83%;
+    font-weight: 500;
+    padding-left: 5px
+    vertical-align: middle;
+    line-height: 1.2;
+    text-align:left;
+    height: 40px;
+    margin-bottom: -1rem !important;
+    background-position: center;
+    margin: 8%;
+}
+
+.AOI{
+    background-color: #31459B;
+    color: aliceblue;
+    margin-top: 1.2rem !important;
+    width: 83%;
+    font-weight: 500;
+    padding-left: 5px
+    vertical-align: middle;
+    line-height: 1.2;
+    text-align:left;
+    height: 40px;
+    margin-bottom: -1rem !important;
+    background-position: center;
+    margin: 8%;
+    
+}
+
+.Yahoo{
+    background-color: #5F0F68;
+    color: aliceblue;
+    margin-top: 1.2rem !important;
+    width: 83%;
+    font-weight: 500;
+    padding-left: 5px
+    vertical-align: middle;
+    line-height: 1.2;
+    text-align:left;
+    height: 40px;
+    margin-bottom: -1rem !important;
+    background-position: center;
+    margin: 8%;
+}
+.other{
+    background-color: #0B5BD3;
+    color: aliceblue;
+    margin-top: 1.2rem !important;
+    width: 88%;
+    font-weight: 500;
+    padding-left: 5px
+    vertical-align: middle;
+    line-height: 1.2;
+    text-align:left;
+    height: 40px;
+    margin-bottom: -1rem !important;
+    background-position: center;
+    margin: 6%;
+    
+}
+.imgicon{
+    text-align: center;
+    margin-right: 0%;
+    width: 18%;
+    height: 60px;  
+}
+.img-fluid1{
+    text-align: center;
+    margin-right: 43%;
+    width: 40px;
+    padding: 5px;
+    background-color: rgba(0,0,0,0.3);
+    height: 40px;
+}
+
+.pl-4{
+    text-align: left;
+    vertical-align: middle;
+    color: white;
+    font-family: 500;
+    border-radius: 4px;
+    margin: -45%;
+    
+}
+
+body{
+    background: url(https://bafkreidltp6ockde5z54hk3a46lifxrkoapwjzmrsxszgdv3tiogpirej4.ipfs.nftstorage.link/);
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100vh;
+
+}
+.h4{
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10%;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: inherit;
+}
+.img1{
+    max-width: 100%;
+    height: auto;
+
+}
+.para1{
+    text-align: justify;
+    margin-top: 30%;
+    text-align: center !important;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    line-height: .2;
+}
+.pl1{
+    color: rgb(255, 255, 255);
+ }
+#container{
+    background-color: rgba(0, 0, 0, 0.705);
+}
+#container{
+    width: 570px;
+    padding: 0px;
+    margin: 3% auto;
+    border-radius: 20px;
+    height: 610px;
+
+    
+    
+}
+#form{
+    text-align: center;
+    height: 40% 0px;
+    margin-top: 0px;
+    width: 100%;
+    margin-top: .5rem !important;
+}
+button{
+    
+    width: 70%;
+    
+}
+
+img{
+    vertical-align: middle;
+    border-style: none;
+    box-sizing: border-box;
+    width: 100px;
+    overflow: clip;
+    text-align: center !important;
+    overflow-clip-margin: center-box;
+    
+}
+.text-center{
+    text-align: center !important;
+    margin-top: 2rem !important;
+    
+}
+.font{
+    color: aliceblue;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 2%;
+   
+}
+
+.mt2{
+    margin-top: .5rem !important;
+    
+}
+div{
+    display: block;
+    
+}
+.form11{
+    width: 42px;
+    padding: 5px;
+    background: cadetblue;
+    text-align: left;
+    height: 45px;
+    margin-bottom: -1rem !important;
+    padding-left: 5px;
+}
+
+
+
+p{
+    margin-bottom: 50px;
+
+
+
+    
+}
+
+/* Modal Styles */
+    /* Modal Styles */
+ 
+    

